@@ -83,6 +83,14 @@ class GestionOperationervice extends ServiceStub{
 		$listeLibelles->request($requete,1);
 		$p_contexte->addDataBlockRow($listeLibelles);
 	}
+	
+	public function getPage(ContextExecution $p_contexte){
+		$numeroCompte = $p_contexte->m_dataRequest->getData('numeroCompte');
+		$compte = new Comptes();
+		$compte->numeroCompte = $numeroCompte;
+		$compte->load();
+		$p_contexte->addDataBlockRow($compte);
+	}
 }
 
 ?>

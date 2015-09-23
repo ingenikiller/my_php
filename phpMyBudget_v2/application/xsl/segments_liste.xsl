@@ -8,6 +8,7 @@
 	</xsl:template>
 	<xsl:template name="Contenu">
 		<center>
+			<xsl:call-template name="segmentDetailEdition"/>
 			<br/>
 			<table class="formulaire" name="tableSegments" id="tableSegments">
 				<tr>
@@ -21,13 +22,13 @@
 						<xsl:value-of select="$LBL.LIBLONG"/>
 					</th>
 					<th>
+						<xsl:value-of select="$LBL.AFFICHER"/>
+					</th>
+					<th>
 						<xsl:value-of select="$LBL.EDITER"/>
 					</th>
 				</tr>
 			</table>
-			
-			
-			
 			<br/>
 			<br/>
 			<table class="formulaire" name="detail_segment" id="detail_segment">

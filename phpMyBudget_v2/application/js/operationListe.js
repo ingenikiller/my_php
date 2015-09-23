@@ -3,7 +3,7 @@
 */	
 $(document).ready(function() {
 	afficheFluxSelect('recFlux', $('#numeroCompte').val(), '');
-	afficheFluxSelect('fluxId', $('#numeroCompte').val(), 'fluxMaitre=N');
+	afficheFluxSelect('fluxId', $('#numeroCompte').val(), 'fluxMaitre=N&recFluxOperations=O');
 	getSoldeCompte($('#numeroCompte').val(), 'solde');
 	listerObjects();
 });

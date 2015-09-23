@@ -2,24 +2,30 @@
 
 class GestionFluxService extends ServiceStub {
 	
+	/**
+     * 
+     * méthode de recherche des flux
+     * @param ContextExecution $p_contexte
+     */
 	public function getListe(ContextExecution $p_contexte){
         $userid = $p_contexte->getUser()->userId;
         $comptePrincipal = $p_contexte->m_dataRequest->getData('comptePrincipal');
         $compteDestination = $p_contexte->m_dataRequest->getData('compteDestination');
         $fluxMaitre = $p_contexte->m_dataRequest->getData('fluxMaitre');
-        
-        
-		$numeroPage=$p_contexte->m_dataRequest->getData('numeroPage');
 		
-		/*$comptePrincipal = new ListObject();
-		$comptePrincipal->name='ComptePrincipal';
-		$comptePrincipal->setAssociatedRequest('Comptes', 'numeroCompte=\'$parent->compteId\'');*/
+		//paramètre permettant de rechercher les flux dont le compte est principal ou destinataire
+        $recFluxOperations = $p_contexte->m_dataRequest->getData('recFluxOperations');
+                
+		$numeroPage=$p_contexte->m_dataRequest->getData('numeroPage');
 		
 		$listFlux = new ListObject();
 		$listFlux->name='ListeFlux';
 		$requete="userId='$userid'";
-		if($comptePrincipal!=''){
-			$requete.= " AND compteid='$comptePrincipal'";
+		
+		if($recFluxOperations!=null && $recFluxOperations=='O'){
+			$requete.= " AND (compteid='$comptePrincipal' OR compteDest='$comptePrincipal')";
+		} else if($comptePrincipal!=''){
+			$requete.= " AND compteid='$comptePrincipal' ";
 		}
 		if($compteDestination!=''){
 			$requete.= " AND compteDest='$compteDestination'";
@@ -27,7 +33,7 @@ class GestionFluxService extends ServiceStub {
 		if($fluxMaitre!=''){
 			$requete.= " AND fluxMaitre='$fluxMaitre' ";
 		}
-		//$listFlux->setAssociatedKey($comptePrincipal);
+		
 		$listFlux->request('Flux', $requete.' order by flux', $numeroPage);
 		$p_contexte->addDataBlockRow($listFlux);
 	
@@ -47,7 +53,7 @@ class GestionFluxService extends ServiceStub {
 	/**
      * 
      * méthode de création
-     * @param unknown_type $p_contexte
+     * @param ContextExecution $p_contexte
      */
 	public function create(ContextExecution $p_contexte){
 		$flux = new Flux();

@@ -1,6 +1,6 @@
 <?php
 
-class ContextExecution{
+class ContextExecution {
 	
 	public $m_objet;
 	
@@ -14,6 +14,7 @@ class ContextExecution{
 	
 	public $m_messages = null;
 	public $m_erreurs = null;
+	
 	/**
 	 * constructeur
 	 */
@@ -68,9 +69,5 @@ class ContextExecution{
 	public function addDataBlockRow($p_blockRow) {
 		$this->m_dataResponse[] = $p_blockRow;
 	}
-	
-	
 }
-
-
 ?>

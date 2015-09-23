@@ -15,7 +15,13 @@ class AuthentificateurStandard {
 	}*/
 	
 	public function authenticate($p_contexte){
-		Logger::getInstance()->addLogMessage('appel authenticate'. ' avec ' . $_SESSION['userid']);
+		if(!isset($_SESSION['userid'])){
+			Logger::getInstance()->addLogMessage('Session non ouverte!');
+			throw new exception('Session non ouverte');
+		} else {
+			$userid = $_SESSION['userid'];
+		}
+		Logger::getInstance()->addLogMessage('appel authenticate'. ' avec ' . $userid);
 
 		$user = new Users();
 		$user->userId = $_SESSION['userid'];

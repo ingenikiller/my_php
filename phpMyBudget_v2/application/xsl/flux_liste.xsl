@@ -21,7 +21,8 @@
 		<center>
 			<br/>
 			<form method="post" name="recherche" id="recherche" onsubmit="return rechercherFlux(this);">
-				<input name="numeroPage" id="numeroPage" type="hidden" value="1"/>
+				<!--input name="numeroPage" id="numeroPage" type="hidden" value="1"/-->
+				<xsl:call-template name="formulaireJson"/>
 				<table class="formulaire">
 					<tr>
 						<th>

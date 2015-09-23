@@ -258,5 +258,57 @@
 		</div>
 	</xsl:template>
 	
+	<!--
+		édition d'un compte
+	-->
+	<xsl:template name="segmentDetailEdition">
+		<div id="boiteSegmentDetail" title="{$LBL.EDITIONSEGMENT}" style="display: none;">
+			<center>
+				<br/>
+				<form method="POST" action="#" onsubmit="return soumettreDetail(this, 'formulaireDetail');" name="segmentDetailForm" id="segmentDetailForm">
+					<input type="hidden" name="service" id="service"/>
+					<table class="formulaireDetail">
+						<tr>
+							<th>
+								<xsl:value-of select="$LBL.SEGMENT"/>
+							</th>
+							<td>
+								<input type="text" name="cleseg" id="cleseg" readonly="readonly"/>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<xsl:value-of select="$LBL.CLE"/>
+							</th>
+							<td>
+								<input type="text" name="codseg" id="codseg" readonly="readonly"/>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<xsl:value-of select="$LBL.LIBCOURT"/>
+							</th>
+							<td>
+								<input type="text" name="libcourt" id="libcourt" size="12"/>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<xsl:value-of select="$LBL.LIBLONG"/>
+							</th>
+							<td>
+								<input type="text" name="liblong" id="liblong" size="40"/>
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="2">
+								<input class="bouton" type="submit" name="valider" value="{$LBL.VALIDER}"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</center>
+		</div>
+	</xsl:template>
 	
 </xsl:stylesheet>

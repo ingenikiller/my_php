@@ -5,9 +5,9 @@
 	<xsl:param name="RECRELEVE">
 		<xsl:value-of select="/root/request/recNoReleve"/>
 	</xsl:param>
-	<xsl:param name="RECFLUX">
+	<!--xsl:param name="RECFLUX">
 		<xsl:value-of select="/root/request/recFlux"/>
-	</xsl:param>
+	</xsl:param-->
 	<xsl:template name="js.module.sheet">
 		<script language="JavaScript" src="application/js/operationListe.js" type="text/javascript"/>
 		<script language="JavaScript" src="application/js/jquery_opertation_edition.js" type="text/javascript"/>

@@ -17,7 +17,7 @@
 			<service name="update" classe="GestionFluxService" methode="update" render="json" isPrivee="true"/>
 		</domaine>
 		<domaine name="operation">
-			<service name="getpage" classe="GestionOperationervice" methode="fictive" isPrivee="false"  xsl="xsl/operation_liste.xsl" paramFlow="MODPAI"/>
+			<service name="getpage" classe="GestionOperationervice" methode="getPage" isPrivee="false"  xsl="xsl/operation_liste.xsl" paramFlow="MODPAI"/>
 			<service name="reclibelle" classe="GestionOperationervice" methode="recLibelle" render="json" isPrivee="false"/>
 			<service name="getliste" classe="GestionOperationervice" methode="gesListe" render="json" isPrivee="true"/>
 			<service name="getone" classe="GestionOperationervice" methode="gesListe" render="json" isPrivee="true"/>
@@ -34,7 +34,6 @@
 			<service name="getone" classe="GestionPrevisionEnteteService" methode="getOne" render="json" isPrivee="true"/>
 			<service name="getlisteentete" classe="GestionPrevisionEnteteService" methode="getListeEntete" render="json" isPrivee="true"/>
 			<service name="create" classe="GestionPrevisionEnteteService" methode="create" render="json" isPrivee="true"/>
-			<service name="update" classe="GestionPrevisionEnteteService" methode="update" render="json" isPrivee="true"/>
 		</domaine>
 		<domaine name="prevision">
 			<service name="defaut" classe="GestionPrevisionService" methode="getPage" isPrivee="true"  xsl="xsl/previsions_liste.xsl" />
@@ -48,6 +47,8 @@
 		<domaine name="segment">
 			<service name="defaut" classe="GestionSegmentService" methode="fictive" isPrivee="true"  xsl="xsl/segments_liste.xsl" />
 			<service name="getsegment" classe="GestionSegmentService" methode="getSegment" render="json" isPrivee="true"/>
+			<service name="getone" classe="GestionSegmentService" methode="getOne" render="json" isPrivee="true"/>
+			<service name="update" classe="GestionSegmentService" methode="update" render="json" isPrivee="true"/>
 		</domaine>
 		<domaine name="statistique">
 			<service name="defaut" classe="GestionStatistiquesService" methode="fictive" isPrivee="true"  xsl="xsl/statistiques_menu.xsl" />

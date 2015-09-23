@@ -35,7 +35,12 @@ class PageControl {
 		
 		if($classe->isPrivee()) {
 			$auten = new AuthentificateurStandard();
-			$auten->authenticate($contexte);
+			try {
+				$auten->authenticate($contexte);
+			} catch (Exception $e){
+				header('Location: index.php');
+				die();
+			}
 		}
 		
 		

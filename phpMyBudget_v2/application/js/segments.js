@@ -1,7 +1,10 @@
 $(document).ready(function() {
 	//
-	afficheDetail('CONF', 'tableSegments');
+	afficheListe('CONF', 'tableSegments');
 });
+
+var tabListe = 'tableSegments';
+var tabSegment = 'detail_segment';
 
 
 /*function afficheDetail(cleseg, idTableau) {	
@@ -25,7 +28,7 @@ $(document).ready(function() {
 	});
 }*/
 
-function afficheDetail(cleseg, idTableau) {
+function afficheListe(cleseg, idTableau) {
 	
 	var params = "cleseg="+cleseg;
 	
@@ -41,14 +44,14 @@ function afficheDetail(cleseg, idTableau) {
 	);
 	
 	//alert(jsonObjectInstance);
-	parseListeJson(jsonObjectInstance, idTableau);
+	parseListeJson(jsonObjectInstance, cleseg, idTableau);
 	return false;
 }
 
 /*
 	parse le tableau Json et génère le tableau
 */
-function parseListeJson(json, idTableau) {
+function parseListeJson(json, cleseg, idTableau) {
 	tab = document.getElementById(idTableau);
 	$('tr[typetr='+idTableau+']').remove();
 	
@@ -57,7 +60,7 @@ function parseListeJson(json, idTableau) {
 	/*document.getElementById('numeroPage').value=json[0].page;
 	document.getElementById('rch_page').value=json[0].page;
 	document.getElementById('max_page').value=json[0].totalPage;*/
-	
+	//alert(cleseg);
 	
 	var nb=json[0].nbLine;
 	var tabJson = json[0].tabResult;
@@ -81,7 +84,14 @@ function parseListeJson(json, idTableau) {
 		
 		
 		var cell4 = row.insertCell(3);
-		cell4.innerHTML='<a onclick="afficheDetail(\''+tabJson[i].codseg+'\', \'detail_segment\')">Editer</a>';
+		if (cleseg!='CONF') {
+			cell4.innerHTML='<a onclick="editionDetail(\''+tabJson[i].cleseg+'\', \''+tabJson[i].codseg+'\')">Editer</a>';
+		} else {
+			cell4.innerHTML='<a onclick="afficheListe(\''+tabJson[i].codseg+'\', \'detail_segment\')">Lister</a>';
+			var cell5=row.insertCell(4);
+			cell5.innerHTML='<a onclick="editionDetail(\''+tabJson[i].cleseg+'\', \''+tabJson[i].codseg+'\')">Editer</a>';
+			cell5.setAttribute('align', "center");
+		}
 		cell4.setAttribute('align', "center");
 		
 	}
@@ -90,25 +100,31 @@ function parseListeJson(json, idTableau) {
 /*************************************
 	
  *************************************/
-function creerSegment(tableau, form) {
+function soumettreDetail(form, tabElement) {
 	if(!validForm(form)) {
 		return false;
 	}
 	//
 	//récupération du tableau de chaine
-	var tabElement = form.elements['champs'].value.split(',');
+	//var tabElement = form.elements['champs'].value.split(',');
 	
 	//constitution de la hashmap
 	var params = contitueParams(form, tabElement);
 	//var params = "cle=toto";
 	$.ajax({ 
-	    url: "index.php?page=SEGMENT_D&cinematic=create",
+	    url: "index.php?domaine=segment",
 	    data: params,
 	    //data: {"edition":"edition"},
 	    dataType: "text",
 	    async: false, 
 	    success: function(retour) { 
-			afficheDetail(form.elements['Ncleseg'].value, tableau);
+			//afficheDetail(form.elements['Ncleseg'].value, tableau);
+			if(form.cleseg.value=='CONF'){
+				afficheListe('CONF', tabListe);
+			} else {
+				afficheListe(form.cleseg.value, tabSegment);
+			}
+			$("div#boiteSegmentDetail").dialog('close');
 	      return false;
 	    }
 	});
@@ -169,11 +185,59 @@ function contitueParamsListe(formulaire, tabElement) {
 function contitueParams(formulaire, tabElement) {
 	var params='';
 	
-	for	(var i in tabElement) {
+	//for	(var i in tabElement) {
+	for (var i=0; i < formulaire.elements.length; i++) {
 		
-		if( typeof(formulaire.elements[tabElement[i]]) != "undefined") {
-			params += tabElement[i] +'='+ formulaire.elements[tabElement[i]].value+'&';
+		if( typeof(formulaire.elements[i]) != "undefined") {
+			params += formulaire.elements[i].id +'='+ formulaire.elements[i].value+'&';
 	}
 	}
 	return params
+}
+
+
+/*************************************
+	
+ *************************************/
+function editionDetail(cleseg, codseg){
+	if(codseg!='') {
+		var params="&cleseg="+cleseg+"&codseg="+codseg;
+	
+	
+		$.getJSON(
+			"index.php?domaine=segment&service=getone",
+			data=params,
+			function(json){
+				document.segmentDetailForm.service.value='update';
+				document.segmentDetailForm.cleseg.value=json[0].cleseg;
+				document.segmentDetailForm.codseg.value=json[0].codseg;
+				document.segmentDetailForm.libcourt.value=json[0].libcourt;
+				document.segmentDetailForm.liblong.value=json[0].liblong;
+				
+				$("div#boiteSegmentDetail").dialog({
+					resizable: false,
+					height:270,
+					width:500,
+					modal: true,
+					position: 'center'
+				});
+			}
+		);
+	} else {
+		document.segmentDetailForm.service.value='create';
+		document.segmentDetailForm.cleseg.value='';
+		document.segmentDetailForm.codseg.value='';
+		document.segmentDetailForm.libcourt.value='';
+		document.segmentDetailForm.liblong.value='';
+		
+		$("div#boiteSegmentDetail").dialog({
+			resizable: false,
+			height:270,
+			width:500,
+			modal: true,
+			position: 'center'
+		});
+	}
+	//initFormOperation();
+	return false;
 }

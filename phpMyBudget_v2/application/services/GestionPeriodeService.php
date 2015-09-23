@@ -34,7 +34,7 @@ class GestionPeriodeService extends ServiceStub{
 			return;
 		}
 		
-		PeriodeCommun::initialiserPeriodeMois($annee);
+		//PeriodeCommun::initialiserPeriodeMois($annee);
 		
 		$reponse = new ReponseAjax();
 		$reponse->status='OK';

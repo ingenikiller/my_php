@@ -2,7 +2,7 @@
 
 abstract class ServiceStub {
 
-	public function fictive($p_contexte){}
+	public function fictive(ContextExecution $p_contexte){}
 	
 	
 }

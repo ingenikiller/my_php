@@ -300,7 +300,7 @@ function enregistreListeLignes(form){
 	}
 	params+='&nbligne='+(i-1)+"&render=json";
 	$.ajax({
-		url: "index.php?domaine=previsionentete&service=update",
+		url: "index.php?domaine=previsionsentete&service=update",
 		async: false,
 		dataType: 'json',
 		data: params

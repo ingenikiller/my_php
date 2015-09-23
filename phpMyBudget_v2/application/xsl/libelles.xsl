@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-15"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:variable name="LBL.ACTIONS">Actions</xsl:variable>
+	<xsl:variable name="LBL.AFFICHER">Afficher</xsl:variable>
 	<xsl:variable name="LBL.ANNEE">Année</xsl:variable>
 	<xsl:variable name="LBL.ANNEES">Années</xsl:variable>
 	<xsl:variable name="LBL.CLE">Clé</xsl:variable>
@@ -29,6 +30,7 @@
 	<xsl:variable name="LBL.EDITIONPREVISION">Edtion d'une prévision</xsl:variable>
 	<xsl:variable name="LBL.EDITIONFLUX">Edtion d'un flux</xsl:variable>
 	<xsl:variable name="LBL.EDITIONOPERATION">Edtion d'une opération</xsl:variable>
+	<xsl:variable name="LBL.EDITIONSEGMENT">Edtion d'un segment</xsl:variable>
 	<xsl:variable name="LBL.ENTREEEPARGNE">Entrée épargne</xsl:variable>
 	<xsl:variable name="LBL.ENREGISTRER">Enregistrer</xsl:variable>
 	<xsl:variable name="LBL.EQUILIBRER">Equilibrer</xsl:variable>
@@ -93,4 +95,5 @@
 	<xsl:variable name="LBL.TOTALDEPENSES">Total dépenses</xsl:variable>
 	<xsl:variable name="LBL.TOTALPREVISIONS">Total prévisions</xsl:variable>
 	<xsl:variable name="LBL.TOTALRECETTES">Total recettes</xsl:variable>
+	<xsl:variable name="LBL.VALIDER">Valider</xsl:variable>
 </xsl:stylesheet>
