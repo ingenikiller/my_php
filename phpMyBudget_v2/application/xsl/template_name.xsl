@@ -121,95 +121,97 @@
 	<xsl:template name="operationEdition">
 		<xsl:param name="numeroCompte"/>
 		<div id="boiteOperation" title="{$LBL.EDITIONOPERATION}" style="display: none;">
+		<center>
 			<form method="POST" action="#" onsubmit="return soumettre(this);" name="operation" id="operation">
-			<input type="hidden" name="service" id="service"/>
-			<input type="hidden" id="noCompte" name="noCompte" value="{$numeroCompte}"/>
-			<input type="hidden" name="operationId" id="operationId" value=""/>
-			<table class="formulaire">
-				<tbody>
-					<tr>
-						<th style="width: 266px;">
-							<xsl:value-of select="$LBL.NUMERORELEVE"/>
-						</th>
-						<td style="width: 445px;">
-							<input size="12" name="noReleve" id="noReleve"  tabindex="10" value="{/root/data/Operation/noReleve}"/>
-						</td>
-					</tr>
-					<tr>
-						<th style="width: 266px;">
-							<xsl:value-of select="$LBL.DATE"/>
-						</th>
-						<td style="width: 445px;">
-							<input type="text" name="date" id="date" size="11" maxlength="10" tabindex="20" value="{/root/data/Operation/date}"/>
-						</td>
-					</tr>
-					<tr>
-						<th style="width: 266px;">
-							<xsl:value-of select="$LBL.LIBELLE"/>
-						</th>
-						<td style="width: 445px;">
-							<input type="text" size="50" id="libelle"  tabindex="30" value="{/root/data/Operation/libelle}"/>
-						</td>
-					</tr>
-					<tr>
-						<th style="width: 266px;">
-							<xsl:value-of select="$LBL.FLUX"/>
-						</th>
-						<td style="width: 445px;">
-							<select name="fluxId" id="fluxId" class="obligatoire" onchange="return getModeReglementDefaut(this, this.form.modePaiementId)" tabindex="40"/>
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<xsl:value-of select="$LBL.MODEDEPAIEMENT"/>
-						</th>
-						<td>
-							<xsl:call-template name="ModifSelect">
-								<xsl:with-param name="value" select="/root/data/Operation/modePaiementId"/>
-								<xsl:with-param name="Node" select="/root/paramFlow/MODPAI"/>
-								<xsl:with-param name="nom" select="'modePaiementId'"/>
-								<xsl:with-param name="defaultValue" select="''"/>
-								<xsl:with-param name="defaultDisplay" select="''"/>
-								<xsl:with-param name="optionVide" select="'O'"/>
-								<xsl:with-param name="tabindex" select="'50'"/>
-							</xsl:call-template>
-						</td>
-					</tr>
-					<tr>
-						<th style="width: 266px;">
-							<xsl:value-of select="$LBL.MONTANT"/>
-						</th>
-						<td style="width: 445px;">
-							<input size="7" name="montant" id="montant" class="numerique obligatoire" onblur="return isDouble(this);" tabindex="60">
-								<xsl:attribute name="value">
-									<xsl:choose>
-										<xsl:when test="/root/data/Operation/montant">
-											<xsl:call-template name="Montant">
-												<xsl:with-param name="montant" select="/root/data/Operation/montant"/>
-											</xsl:call-template>
-										</xsl:when>
-										<xsl:otherwise>0</xsl:otherwise>
-									</xsl:choose>
-								</xsl:attribute>
-							</input>
-						</td>
-					</tr>
-					<tr>
-						<th style="width: 266px;">
-							<xsl:value-of select="$LBL.VERIFICATION"/>
-						</th>
-						<td style="width: 445px;">
-							<input type="checkbox" name="verif" id="verif" checked="Verif" tabindex="70" />
-						</td>
-					</tr>
-					<tr align="center">
-						<td colspan="2" rowspan="1">
-							<input name="valider" value="Valider" type="submit"/>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
+				<input type="hidden" name="service" id="service"/>
+				<input type="hidden" id="noCompte" name="noCompte" value="{$numeroCompte}"/>
+				<input type="hidden" name="operationId" id="operationId" value=""/>
+				<table class="formulaire">
+					<tbody>
+						<tr>
+							<th style="width: 266px;">
+								<xsl:value-of select="$LBL.NUMERORELEVE"/>
+							</th>
+							<td style="width: 445px;">
+								<input size="12" name="noReleve" id="noReleve"  tabindex="10" value="{/root/data/Operation/noReleve}"/>
+							</td>
+						</tr>
+						<tr>
+							<th style="width: 266px;">
+								<xsl:value-of select="$LBL.DATE"/>
+							</th>
+							<td style="width: 445px;">
+								<input type="text" name="date" id="date" size="11" maxlength="10" tabindex="20" value="{/root/data/Operation/date}"/>
+							</td>
+						</tr>
+						<tr>
+							<th style="width: 266px;">
+								<xsl:value-of select="$LBL.LIBELLE"/>
+							</th>
+							<td style="width: 445px;">
+								<input type="text" size="50" id="libelle"  tabindex="30" value="{/root/data/Operation/libelle}"/>
+							</td>
+						</tr>
+						<tr>
+							<th style="width: 266px;">
+								<xsl:value-of select="$LBL.FLUX"/>
+							</th>
+							<td style="width: 445px;">
+								<select name="fluxId" id="fluxId" class="obligatoire" onchange="return getModeReglementDefaut(this, this.form.modePaiementId)" tabindex="40"/>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<xsl:value-of select="$LBL.MODEDEPAIEMENT"/>
+							</th>
+							<td>
+								<xsl:call-template name="ModifSelect">
+									<xsl:with-param name="value" select="/root/data/Operation/modePaiementId"/>
+									<xsl:with-param name="Node" select="/root/paramFlow/MODPAI"/>
+									<xsl:with-param name="nom" select="'modePaiementId'"/>
+									<xsl:with-param name="defaultValue" select="''"/>
+									<xsl:with-param name="defaultDisplay" select="''"/>
+									<xsl:with-param name="optionVide" select="'O'"/>
+									<xsl:with-param name="tabindex" select="'50'"/>
+								</xsl:call-template>
+							</td>
+						</tr>
+						<tr>
+							<th style="width: 266px;">
+								<xsl:value-of select="$LBL.MONTANT"/>
+							</th>
+							<td style="width: 445px;">
+								<input size="7" name="montant" id="montant" class="numerique obligatoire" onblur="return isDouble(this);" tabindex="60">
+									<xsl:attribute name="value">
+										<xsl:choose>
+											<xsl:when test="/root/data/Operation/montant">
+												<xsl:call-template name="Montant">
+													<xsl:with-param name="montant" select="/root/data/Operation/montant"/>
+												</xsl:call-template>
+											</xsl:when>
+											<xsl:otherwise>0</xsl:otherwise>
+										</xsl:choose>
+									</xsl:attribute>
+								</input>
+							</td>
+						</tr>
+						<tr>
+							<th style="width: 266px;">
+								<xsl:value-of select="$LBL.VERIFICATION"/>
+							</th>
+							<td style="width: 445px;">
+								<input type="checkbox" name="verif" id="verif" checked="Verif" tabindex="70" />
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="2" rowspan="1">
+								<input name="valider" value="Valider" type="submit"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</center>
 		</div>
 	</xsl:template>
 	

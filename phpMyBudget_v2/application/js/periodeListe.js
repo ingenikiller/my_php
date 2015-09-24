@@ -35,8 +35,7 @@ function editerOperation(numeroCompte, operationId){
 					resizable: false,
 					height:270,
 					width:500,
-					modal: true,
-					position: 'center'
+					modal: true
 				});
 			}
 		);
@@ -54,8 +53,7 @@ function editerOperation(numeroCompte, operationId){
 			resizable: false,
 			height:270,
 			width:500,
-			modal: true,
-			position: 'center'
+			modal: true
 		});
 	}
 	initFormOperation();

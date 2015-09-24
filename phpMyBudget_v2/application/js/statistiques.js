@@ -71,8 +71,7 @@ function afficheDetail(params){
 					resizable: false,
 					height:600,
 					width:500,
-					modal: true,
-					position: 'center'
+					modal: true
 				});
 }
 

@@ -218,8 +218,7 @@ function editionDetail(cleseg, codseg){
 					resizable: false,
 					height:270,
 					width:500,
-					modal: true,
-					position: 'center'
+					modal: true
 				});
 			}
 		);
@@ -234,8 +233,7 @@ function editionDetail(cleseg, codseg){
 			resizable: false,
 			height:270,
 			width:500,
-			modal: true,
-			position: 'center'
+			modal: true
 		});
 	}
 	//initFormOperation();

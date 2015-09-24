@@ -91,9 +91,8 @@ function editerOperation(numeroCompte, operationId){
 				$("div#boiteOperation").dialog({
 					resizable: false,
 					height:270,
-					width:500,
-					modal: true,
-					position: 'center'
+					width:520,
+					modal: true
 				});
 			}
 		);
@@ -111,8 +110,7 @@ function editerOperation(numeroCompte, operationId){
 			resizable: false,
 			height:270,
 			width:500,
-			modal: true,
-			position: 'center'
+			modal: true
 		});
 	}
 	initFormOperation();

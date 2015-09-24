@@ -132,8 +132,7 @@ function editerCompte(numeroCompte){
 		resizable: false,
 		height:250,
 		width:400,
-		modal: true,
-		position: 'center'
+		modal: true
 	});
 }
 

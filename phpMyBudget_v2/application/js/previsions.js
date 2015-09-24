@@ -65,8 +65,7 @@ function afficheUnitaire(compte, idLigne){
             resizable: false,
             height:190,
             width:400,
-            modal: true,
-		   position: 'center'
+            modal: true
             });
 }
 
@@ -123,8 +122,7 @@ function afficheEntete(compte) {
 	$("div#boiteEntete").dialog({
 		resizable: false,
 		width:400,
-		modal: true,
-		position: 'center'
+		modal: true
 	});
 }
 
@@ -212,7 +210,6 @@ function afficheListeGroupe(fluxId){
 		resizable: false,
 		width:400,
 		modal: true,
-		position: 'center',
 		title : 'Edition prévision pour '+$("#listeEntete").find("option:selected").text()
 	});
     
