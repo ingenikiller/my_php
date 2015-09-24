@@ -85,11 +85,11 @@ function parseListeJson(json, cleseg, idTableau) {
 		
 		var cell4 = row.insertCell(3);
 		if (cleseg!='CONF') {
-			cell4.innerHTML='<a onclick="editionDetail(\''+tabJson[i].cleseg+'\', \''+tabJson[i].codseg+'\')">Editer</a>';
+			cell4.innerHTML='<a href="#" onclick="editionDetail(\''+tabJson[i].cleseg+'\', \''+tabJson[i].codseg+'\')">Editer</a>';
 		} else {
-			cell4.innerHTML='<a onclick="afficheListe(\''+tabJson[i].codseg+'\', \'detail_segment\')">Lister</a>';
+			cell4.innerHTML='<a href="#" onclick="afficheListe(\''+tabJson[i].codseg+'\', \'detail_segment\')">Lister</a>';
 			var cell5=row.insertCell(4);
-			cell5.innerHTML='<a onclick="editionDetail(\''+tabJson[i].cleseg+'\', \''+tabJson[i].codseg+'\')">Editer</a>';
+			cell5.innerHTML='<a href="#" onclick="editionDetail(\''+tabJson[i].cleseg+'\', \''+tabJson[i].codseg+'\')">Editer</a>';
 			cell5.setAttribute('align', "center");
 		}
 		cell4.setAttribute('align', "center");
@@ -200,6 +200,9 @@ function contitueParams(formulaire, tabElement) {
 	
  *************************************/
 function editionDetail(cleseg, codseg){
+	var largeur=420;
+	var hauteur=240;
+
 	if(codseg!='') {
 		var params="&cleseg="+cleseg+"&codseg="+codseg;
 	
@@ -216,8 +219,8 @@ function editionDetail(cleseg, codseg){
 				
 				$("div#boiteSegmentDetail").dialog({
 					resizable: false,
-					height:270,
-					width:500,
+					height: hauteur,
+					width:largeur,
 					modal: true
 				});
 			}
@@ -231,8 +234,8 @@ function editionDetail(cleseg, codseg){
 		
 		$("div#boiteSegmentDetail").dialog({
 			resizable: false,
-			height:270,
-			width:500,
+			height: hauteur,
+			width: largeur,
 			modal: true
 		});
 	}

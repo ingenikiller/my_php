@@ -57,15 +57,7 @@ function isDouble (s)
  * fonction de validation des formulaire
  */
 function validForm(pForm) {
-	/*if(pForm.elements['NCodseg'].className.indexOf("obligatoire")!=-1) {
-		alert('fgfg');
-	}
 	
-	if(pForm.elements['NCodseg'].className.indexOf("obligatoire")!=-1  && pForm.elements['NCodseg'].value =='') {
-		alert ('');
-		return false;
-	}*/
-	//alert("tyty");
 	for (var i=0; i < pForm.elements.length; i++) {
 		var e = pForm.elements[i];
 		if((e.className.indexOf("obligatoire")!=-1 || e.className.indexOf("numerique_obligatoire")!=-1)  && e.value =='') {

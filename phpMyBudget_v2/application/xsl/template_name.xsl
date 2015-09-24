@@ -261,7 +261,7 @@
 	</xsl:template>
 	
 	<!--
-		édition d'un compte
+		édition d'un segment
 	-->
 	<xsl:template name="segmentDetailEdition">
 		<div id="boiteSegmentDetail" title="{$LBL.EDITIONSEGMENT}" style="display: none;">
@@ -312,5 +312,4 @@
 			</center>
 		</div>
 	</xsl:template>
-	
 </xsl:stylesheet>

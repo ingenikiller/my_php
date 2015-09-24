@@ -6,7 +6,6 @@
 	<xsl:import href="pagination.xsl"/>
 	<xsl:output encoding="UTF-8"/>
 	
-	<xsl:variable name="JQUERY-VERSION" select="'1.11.4'"/>
 	<!--variables de configuration-->
 	<xsl:variable name="IMG_ROOT" select="'application/images/'"/>
 	<!-- formats-->

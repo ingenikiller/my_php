@@ -27,8 +27,9 @@ class OperationCommun {
         }
 	}
 	
-	
-	
+	/**
+     * Gestion d'une opération liée pour les flux multi comptes
+     */
     public static function operationLiee($p_operation){
         //recherche de la conf du flux
         $l_flux = new Flux();
@@ -39,6 +40,7 @@ class OperationCommun {
 
         //si le flux n'a pas de compte lié
         if($l_flux->compteDest =='') {
+            //on recherche une opération liée pour la supprimer ( cas du changement de flux)
         	$operation = self::rechercherOperationLiee($l_flux, $p_operation);
         	if($operation!=null){
         		$operation->delete();

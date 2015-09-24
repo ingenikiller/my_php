@@ -43,7 +43,6 @@ class PageControl {
 			}
 		}
 		
-		
 		try {
 			$classe->execute($contexte);
 		} catch(TechnicalException $e){
@@ -67,6 +66,5 @@ class PageControl {
 			}
 		}
 	}
-
 }
 ?>

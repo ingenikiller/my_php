@@ -11,8 +11,15 @@
  * @author ingeni
  */
 class PrevisionCommun {
-    //put your code here
     
+    /**
+     * Génère les prévisions
+     * @param $entete entête de rattachement
+     * @param $identete
+     * @param $periodicite périodicité des prévisions
+     * @param $decalage décalage au début de la période
+     * @param $montant montant de la prévision
+     */
     public static function genereLignes(Prevision $entete, $identete, $periodicite, $decalage, $montant){
         //$periode = $entete->annee * 100 + $decalage;
         $mois=$decalage;

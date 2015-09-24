@@ -23,20 +23,6 @@ class ContextExecution {
 	}
 	
 	/**
-	 * Crée la connexion à la base si elle n'existe pas
-	 * 
-	 */
-	/*public function getConnexion(){
-		if($this->m_connexion==null) {
-			$this->m_connexion=new classe_bdd(HOST, USER, PASSWD, DATABASE);
-			if (!$this->m_connexion->connect()) {
-				die ('connexion impossible');
-			}
-		}
-		return $this->m_connexion;
-	}*/
-	
-	/**
 	 * Accès à l'utilisateur identifié
 	 * @param unknown_type $p_user
 	 */
@@ -64,7 +50,6 @@ class ContextExecution {
 		}
 		$this->m_erreurs[count($this->m_erreurs)] = $p_message;
 	}
-	
 	
 	public function addDataBlockRow($p_blockRow) {
 		$this->m_dataResponse[] = $p_blockRow;
