@@ -69,6 +69,8 @@ $(function() {
 */
 function editerOperation(numeroCompte, operationId){
 	
+	var largeur=540;
+	var hauteur=240;
 	var params = "numeroCompte="+numeroCompte;
 	
 	if(operationId!='') {
@@ -90,8 +92,8 @@ function editerOperation(numeroCompte, operationId){
 				
 				$("div#boiteOperation").dialog({
 					resizable: false,
-					height:270,
-					width:520,
+					height: hauteur,
+					width: largeur,
 					modal: true
 				});
 			}
@@ -108,8 +110,8 @@ function editerOperation(numeroCompte, operationId){
 		
 		$("div#boiteOperation").dialog({
 			resizable: false,
-			height:270,
-			width:500,
+			height: hauteur,
+			width: largeur,
 			modal: true
 		});
 	}

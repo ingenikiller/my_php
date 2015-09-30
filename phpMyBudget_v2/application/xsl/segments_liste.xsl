@@ -7,8 +7,8 @@
 		<script type="text/javascript" src="application/js/segments.js" charset="iso-8859-1">&#160;</script>
 	</xsl:template>
 	<xsl:template name="Contenu">
+		<xsl:call-template name="segmentDetailEdition"/>
 		<center>
-			<xsl:call-template name="segmentDetailEdition"/>
 			<br/>
 			<table class="formulaire" name="tableSegments" id="tableSegments">
 				<tr>

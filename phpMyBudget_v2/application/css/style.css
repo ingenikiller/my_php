@@ -34,14 +34,14 @@ ul
 	list-style-type:square;
 }
 
-li
+/*li
 {
     font-family: Verdana, Arial, Times, Serif;
     font-size: 12px;
 	width:90%;
 	text-align:justify;
 	list-style-type:square;
-}
+}*/
 
 /************************************************
  * Balises de navigation
@@ -281,12 +281,12 @@ th.noStyle {
 /************************************************
  * formulaire
  ************************************************/
-table.formulaire {
+/*table.formulaire {
 	background-color :#D2DBE9;
 	border-width:1px;
 	border-style:solid;
 	border-color:#7e7e89;
-}
+}*/
 
 table.recherche {
 	background-color :#D2DBE9;
@@ -380,4 +380,11 @@ input.numerique_obligatoire {
 	border-style: solid;
 	border-width: 1px;
 }*/
+
+
+div.boutonMenu{
+	height: 32px;
+    margin: 0,auto, auto, 0;
+    width: 184px;
+}
 

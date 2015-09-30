@@ -152,15 +152,14 @@ function editerFlux(fluxId){
 		
 		$('#fluxMaitreId').val(jsonObjectInstance[0].fluxMaitreId);
 		$('#depense').val(jsonObjectInstance[0].depense);
-		
 	}
 	
 	$("div#boiteFlux").dialog({
 			resizable: false,
-			height:340,
+			height:300,
 			width:500,
 			modal: true
-		});
+	});
 }
 
 
@@ -174,24 +173,23 @@ function enregistreFlux(form){
 	}
 	
 	$.ajax({ 
-    url: "index.php?domaine=flux&service="+$('#service').val(),
-    data: { "fluxId": form.fluxId.value,
-			"flux": form.flux.value,
-	    	"description": form.description.value,
-			"modePaiementId": form.modePaiementId.value,
-			"compteId": form.compteId.value,
-			"compteDest": form.compteDest.value,
-			"entreeEpargne": $('#entreeEpargne').attr('checked')=='checked'?'checked':'',
-			"sortieEpargne": $('#sortieEpargne').attr('checked')=='checked'?'checked':'',
-			"fluxMaitreId": form.fluxMaitreId.value,
-			"fluxMaitre": $('#fluxMaitre').attr('checked')=='checked'?'O':'N',
-			"depense": form.depense.value
-	}, 
-    async: false, 
-    success: function(retour) { 
-      //alert('OK');
-      return false;
-    } 
+	    url: "index.php?domaine=flux&service="+$('#service').val(),
+	    data: { "fluxId": form.fluxId.value,
+				"flux": form.flux.value,
+		    	"description": form.description.value,
+				"modePaiementId": form.modePaiementId.value,
+				"compteId": form.compteId.value,
+				"compteDest": form.compteDest.value,
+				"entreeEpargne": $('#entreeEpargne').attr('checked')=='checked'?'checked':'',
+				"sortieEpargne": $('#sortieEpargne').attr('checked')=='checked'?'checked':'',
+				"fluxMaitreId": form.fluxMaitreId.value,
+				"fluxMaitre": $('#fluxMaitre').attr('checked')=='checked'?'O':'N',
+				"depense": form.depense.value
+		}, 
+		async: false, 
+	    success: function(retour) {
+	    	return false;
+		} 
 	});
 	
 	$("div#boiteFlux").dialog('close');

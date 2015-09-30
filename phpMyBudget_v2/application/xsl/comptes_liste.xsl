@@ -7,8 +7,6 @@
 	</xsl:template>
 	<xsl:template name="Contenu">
 		<xsl:call-template name="compteEdition"/>
-		<br/>
-		<br/>
 		<h1>
 			<xsl:value-of select="$LBL.LISTEDESCOMPTES"/>
 		</h1>

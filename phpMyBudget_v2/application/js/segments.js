@@ -239,6 +239,5 @@ function editionDetail(cleseg, codseg){
 			modal: true
 		});
 	}
-	//initFormOperation();
 	return false;
 }
