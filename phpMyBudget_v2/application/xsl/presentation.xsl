@@ -100,9 +100,6 @@
 								</a>
 		                    </li>
 		                    <li>
-		                        <a href="index.php?domaine=segment">Paramétrage</a>
-		                    </li>
-		                    <li>
 		                    	<a href="index.php?domaine=segment">
 									<xsl:value-of select="$LBL.PARAMETRAGE"/>
 								</a>

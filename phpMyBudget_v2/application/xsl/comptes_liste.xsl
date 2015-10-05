@@ -10,35 +10,35 @@
 		<h1>
 			<xsl:value-of select="$LBL.LISTEDESCOMPTES"/>
 		</h1>
+		<input type="button" class="bouton" id="" name="" value="{$LBL.CREER}" onclick="editerCompte('');"/>
 		<center>
 			<form name="recComptes" id="recComptes">
 				<xsl:call-template name="formulaireJson"/>
 			</form>
-		
 			<table class="liste" name="tableauResultat" id="tableauResultat">
 				<tr>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.COMPTE"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.DESCRIPTION"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.SOLDEBASE"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.SOLDE"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.OPERATIONS"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.EDITER"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.STATISTIQUES"/>
 					</th>
-					<th>
+					<th class="enteteListe">
 						<xsl:value-of select="$LBL.PREVISIONS"/>
 					</th>
 				</tr>
@@ -49,6 +49,6 @@
 		</center>
 		<br/>
 		<br/>
-		<p>Créer un <a href="javascript:editerCompte('')" class="lienNavigation">nouveau compte</a>.</p>
+		<!--p>Créer un <a href="javascript:editerCompte('')" class="lienNavigation">nouveau compte</a>.</p-->
 	</xsl:template>
 </xsl:stylesheet>

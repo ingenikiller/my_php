@@ -35,9 +35,9 @@
 						<xsl:value-of select="format-number(sum(associatedObjet/Previsions/Prevision[fluxId=/root/data/ListeFlux/Dynamic[depense='O']/fluxId]/montant),$FORMAT_MNT)"/>
 					</td>
 				</xsl:for-each>
-				<th>
+				<td class="recap">
 					<xsl:value-of select="format-number(sum(/root/data/Periodes/Periode/associatedObjet/Previsions/Prevision[fluxId=/root/data/ListeFlux/Dynamic[depense='O']/fluxId]/montant),$FORMAT_MNT)"/>
-				</th>
+				</td>
 			</tr>
 			<tr>
 				<th>
@@ -48,9 +48,9 @@
 						<xsl:value-of select="format-number(sum(associatedObjet/ListeMontantFlux/Dynamic[fluxId=/root/data/ListeFlux/Dynamic[depense='O']/fluxId]/total),$FORMAT_MNT)"/>
 					</td>
 				</xsl:for-each>
-				<th>
+				<td class="recap">
 					<xsl:value-of select="format-number(sum(/root/data/Periodes/Periode/associatedObjet/ListeMontantFlux/Dynamic[fluxId=/root/data/ListeFlux/Dynamic[depense='O']/fluxId]/total),$FORMAT_MNT)"/>
-				</th>
+				</td>
 			</tr>
 			<tr>
 				<th>
@@ -75,9 +75,9 @@
 						<xsl:value-of select="format-number(sum(associatedObjet/Previsions/Prevision[fluxId=/root/data/ListeFlux/Dynamic[depense!='O']/fluxId]/montant),$FORMAT_MNT)"/>
 					</td>
 				</xsl:for-each>
-				<th>
+				<td class="recap">
 					<xsl:value-of select="format-number(sum(/root/data/Periodes/Periode/associatedObjet/Previsions/Prevision[fluxId=/root/data/ListeFlux/Dynamic[depense!='O']/fluxId]/montant),$FORMAT_MNT)"/>
-				</th>
+				</td>
 			</tr>
 			<tr>
 				<th>
@@ -88,9 +88,9 @@
 						<xsl:value-of select="format-number(sum(associatedObjet/Previsions/Prevision[fluxId=/root/data/ListeFlux/Dynamic[depense!='O']/fluxId]/montant),$FORMAT_MNT)"/>
 					</td>
 				</xsl:for-each>
-				<th>
+				<td class="recap">
 					<xsl:value-of select="format-number(sum(/root/data/Periodes/Periode/associatedObjet/ListeMontantFlux/Dynamic[fluxId=/root/data/ListeFlux/Dynamic[depense!='O']/fluxId]/total),$FORMAT_MNT)"/>
-				</th>
+				</td>
 			</tr>
 			<tr>
 				<th>
@@ -111,13 +111,13 @@
 				</th>
 				<xsl:for-each select="/root/data/Periodes/Periode">
 					<xsl:variable name="somme" select="format-number(sum(associatedObjet/Previsions/Prevision/montant),$FORMAT_MNT)"/>
-					<td>
+					<td class="recap">
 						<xsl:choose>
 							<xsl:when test="$somme &gt;= 0">
-								<xsl:attribute name="class">positif</xsl:attribute>
+								<xsl:attribute name="class">recap positif</xsl:attribute>
 							</xsl:when>
 							<xsl:otherwise>
-								<xsl:attribute name="class">negatif</xsl:attribute>
+								<xsl:attribute name="class">recap negatif</xsl:attribute>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:value-of select="$somme"/>

@@ -87,7 +87,7 @@
 					</td>
 				</tr>
 			</table>
-			<table class="formulaire" name="liste" id="liste"/>
+			<table class="liste" name="liste" id="liste"/>
 			<form method="post" action="" name="formEntete" id="formEntete">
 				<table id="tableEntete" name="tableEntete"/>
 			</form>

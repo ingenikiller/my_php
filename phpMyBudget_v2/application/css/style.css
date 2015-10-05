@@ -34,15 +34,6 @@ ul
 	list-style-type:square;
 }
 
-/*li
-{
-    font-family: Verdana, Arial, Times, Serif;
-    font-size: 12px;
-	width:90%;
-	text-align:justify;
-	list-style-type:square;
-}*/
-
 /************************************************
  * Balises de navigation
  ************************************************/
@@ -127,12 +118,6 @@ td.montant
 	display:none;
 }
 
-
-.entetecumul
-{
-	background-color: #FFFFFF;
-}
-
 h1
 {
     font-family: Verdana, Arial, Times, Serif;
@@ -181,21 +166,14 @@ img {
 	border:0;
 }
 
-
-/************************************************
- * Balises d'affichage d'une recherche
- ************************************************/
-.tabLigneRecherche
-{
-	width:150px;
-}
-
 /************************************************
  * tableau
  ************************************************/
 th
 {
-	background-color: #babac5;
+	/*background-color: #babac5;*/
+	/*background-color: #000000;*/
+	color: white;
 	font-size : 8pt;
 	font-family: verdana;
 	font-style: normal;
@@ -204,10 +182,16 @@ th
 	text-align:center;
 	/*width:266px;*/
 }
- 
- table.liste
+
+th.enteteListe
 {
-	background-color :#D2DBE9;
+	background-color: #000000;
+	
+}
+
+table.liste
+{
+	/*background-color :#D2DBE9;*/
 	/*border-width:1px;*/
 	/*border-style:solid;*/
 	border-color:#7e7e89;
@@ -254,7 +238,7 @@ td.lienImage {
 
 .l0 
 {
-	background-color: #b1bfd5;
+	background-color: #aba0a0; /*#b1bfd5;*/
 }
 tr.l0:hover
 {
@@ -263,7 +247,7 @@ tr.l0:hover
 
 .l1 
 {
-	background-color: #d2dbe9;
+	background-color: #d4d1d1; /*#d2dbe9;*/
 }
 tr.l1:hover
 {
@@ -297,18 +281,6 @@ table.recherche {
 }
 
 
-td.diffNegative {
-	color:red;
-	font-weight: bold;
-	text-align:right;
-}
-
-td.diffPositive{
-	color:green;
-	font-weight: bold;
-	text-align:right;
-}
-
 td.negative {
 	color:red;
 	/*font-weight: bold;*/
@@ -326,28 +298,7 @@ td.recap{
 	text-align:right;
 	font-weight: bold;
 }
-/*
-input.bouton, input.quitter {
-	color: #ffffff;
-	font-family: verdana,arial,sans-serif;
-	text-align: center;
-	font-size: 7pt;
-	background-color: #92929d;
-	border-color: #9FA0AA #525252 #525252 #9FA0AA;
-	border-width: 2px;
-	border-style:solid;
-}*/
 
-/*input.obligatoire {
-	color: #000000;
-	background-color: #fac98f;
-	text-align: left;
-	font-family: verdana,arial,sans-serif;
-	font-size: 8pt;
-	border-color: #7e7e8a;
-	border-style: solid;
-	border-width: 1px;
-}*/
 
 select.obligatoire {
 	color: #000000;
@@ -359,32 +310,3 @@ select.obligatoire {
 	border-style: solid;
 	border-width: 1px;
 }
-
-/*input.numerique {
-	color: #000000;*/
-	/*background-color: #fac98f;*/
-	/*text-align: right;
-	font-family: verdana,arial,sans-serif;
-	font-size: 8pt;
-	border-color: #7e7e8a;
-	border-style: solid;
-}
-
-input.numerique_obligatoire {
-	color: #000000;
-	background-color: #fac98f;
-	text-align: right;
-	font-family: verdana,arial,sans-serif;
-	font-size: 8pt;
-	border-color: #7e7e8a;
-	border-style: solid;
-	border-width: 1px;
-}*/
-
-
-div.boutonMenu{
-	height: 32px;
-    margin: 0,auto, auto, 0;
-    width: 184px;
-}
-
