@@ -159,6 +159,7 @@ function listerObjects(){
 	
 	//alert(jsonObjectInstance);
 	parseListeJson(jsonObjectInstance);
+	$('#numeroPage').val(1);
 	return false;
 }
 

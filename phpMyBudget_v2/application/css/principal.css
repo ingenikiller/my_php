@@ -3,8 +3,6 @@ html {
 
     margin : 0px auto 0px auto;
     padding : 0;
-    /*background-image: url(images/fond.gif);*/
-    /*background-color : #FFFFFF;*/
 }
 body {
     margin : auto;
@@ -86,7 +84,7 @@ tr
 	padding-bottom: 0px;
 }
 
-/* Lignes entête de tableau */
+/* Lignes entÃªte de tableau */
 tr.entete
 {
 	background-color: #babac5;
@@ -252,17 +250,3 @@ select {
 select.obligatoire {
 	background-color: #fac98f;
 }
-
-
-
-/*input.numerique_obligatoire {
-	color: #000000;
-	background-color: #fac98f;
-	text-align: right;
-	font-family: verdana,arial,sans-serif;
-	font-size: 8pt;
-	border-color: #7e7e8a;
-	border-style: solid;
-	border-width: 1px;
-}*/
-
