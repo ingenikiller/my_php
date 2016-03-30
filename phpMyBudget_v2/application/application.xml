@@ -54,11 +54,13 @@
 			<service name="defaut" classe="GestionStatistiquesService" methode="fictive" isPrivee="true"  xsl="xsl/statistiques_menu.xsl" />
 			<service name="menu" classe="GestionStatistiquesService" methode="fictive" isPrivee="true"  xsl="xsl/statistiques_menu.xsl" />
 			<service name="affformreleves" classe="GestionStatistiquesService" methode="affFormReleves" isPrivee="true"  xsl="xsl/statistiques_releves_form.xsl" />
+			<service name="affformflux" classe="GestionStatistiquesService" methode="affFormMois" isPrivee="true"  xsl="xsl/statistiques_flux_form.xsl" />
 			<service name="statreleves" classe="GestionStatistiquesService" methode="statReleves" isPrivee="true"  xsl="xsl/statistiques_releves.xsl" />
 			<service name="affformmois" classe="GestionStatistiquesService" methode="affFormMois" isPrivee="true"  xsl="xsl/statistiques_mois_form.xsl" />
 			<service name="statmois" classe="GestionStatistiquesService" methode="statMois" isPrivee="true"  xsl="xsl/statistiques_mois.xsl" />
 			<service name="affformannees" classe="GestionStatistiquesService" methode="affFormMois" isPrivee="true"  xsl="xsl/statistiques_annees_form.xsl" />
 			<service name="statannees" classe="GestionStatistiquesService" methode="statAnnees" isPrivee="true"  xsl="xsl/statistiques_annees.xsl" />
+			<service name="statflux" classe="GestionStatistiquesService" methode="statFlux" isPrivee="true"  xsl="xsl/statistiques_flux.xsl" />
 		</domaine>
 		<domaine name="technique">
 			<service name="login" classe="Login" methode="fictive" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>

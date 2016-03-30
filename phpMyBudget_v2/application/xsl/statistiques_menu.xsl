@@ -16,7 +16,12 @@
 			<br/>
 			<br/>
 			<p>
-		Pour afficher lles statistiques suivant les années sous forme de tableau, cliquer <a href="index.php?domaine=statistique&amp;service=affformannees&amp;type=tabTotauxAnnuels&amp;numeroCompte={$NUMEROCOMPTE}">ici</a>
+		Pour afficher les statistiques suivant les années sous forme de tableau, cliquer <a href="index.php?domaine=statistique&amp;service=affformannees&amp;type=tabTotauxAnnuels&amp;numeroCompte={$NUMEROCOMPTE}">ici</a>
+			</p>
+			<br/>
+			<br/>
+			<p>
+		Pour afficher les statistiques suivant les années sous forme de tableau, cliquer <a href="index.php?domaine=statistique&amp;service=affformflux&amp;type=tabTotauxFlux&amp;numeroCompte={$NUMEROCOMPTE}">ici</a>
 			</p>
 			<br/>
 			<br/>
