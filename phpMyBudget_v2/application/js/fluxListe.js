@@ -106,8 +106,7 @@ function parseListeJson(json) {
 	affiche la popup d'édition d'un compte
  *********************************************************/
 function editerFlux(fluxId){
-	//numéro de compte en dur car compte principal
-	afficheFluxSelect('fluxMaitreId', '90063454011', 'fluxMaitre=O');
+	
 	if(fluxId==''){
 		$('#service').val('create');
 		$('#fluxId').val('');
@@ -117,7 +116,8 @@ function editerFlux(fluxId){
 		$('#compteId').val('');
 		$('#compteDest').val('');
 		$('#fluxMaitre').val('');
-		$('#fluxMaitreId').val('');
+		//$('#fluxMaitreId').val('');
+		$('#fluxMaitreId').empty();
 		
 	} else {
 		//
@@ -131,6 +131,10 @@ function editerFlux(fluxId){
 		$('#description').val(jsonObjectInstance[0].description);
 		$('#modePaiementId').val(jsonObjectInstance[0].modePaiementId);
 		$('#compteId').val(jsonObjectInstance[0].compteId);
+		
+		//numéro de compte en dur car compte principal
+		afficheFluxSelect('fluxMaitreId', jsonObjectInstance[0].compteId, 'fluxMaitre=O');
+		
 		$('#compteDest').val(jsonObjectInstance[0].compteDest);
 		if(jsonObjectInstance[0].entreeEpargne=='') {
 			$('#entreeEpargne').removeAttr('checked')
@@ -184,7 +188,7 @@ function enregistreFlux(form){
 			"entreeEpargne": $('#entreeEpargne').attr('checked')=='checked'?'checked':'',
 			"sortieEpargne": $('#sortieEpargne').attr('checked')=='checked'?'checked':'',
 			"fluxMaitreId": form.fluxMaitreId.value,
-			"fluxMaitre": $('#fluxMaitre').attr('checked')=='checked'?'O':'N',
+			"fluxMaitre": $('#fluxMaitre').is(':checked')?'O':'N',
 			"depense": form.depense.value
 	}, 
     async: false, 

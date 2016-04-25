@@ -118,7 +118,7 @@
 							<xsl:value-of select="$LBL.COMPTEPRINCIPAL"/>
 						</th>
 						<td>
-							<select name="compteId" id="compteId" class="obligatoire"/>
+							<select name="compteId" id="compteId" class="obligatoire" onchange="afficheFluxSelect('fluxMaitreId', $(this).val(), 'fluxMaitre=O')"/>
 						</td>
 					</tr>
 					<tr>
