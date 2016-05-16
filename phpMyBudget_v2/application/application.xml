@@ -34,6 +34,7 @@
 			<service name="getone" classe="GestionPrevisionEnteteService" methode="getOne" render="json" isPrivee="true"/>
 			<service name="getlisteentete" classe="GestionPrevisionEnteteService" methode="getListeEntete" render="json" isPrivee="true"/>
 			<service name="create" classe="GestionPrevisionEnteteService" methode="create" render="json" isPrivee="true"/>
+			<service name="update" classe="GestionPrevisionEnteteService" methode="update" render="json" isPrivee="true"/>
 		</domaine>
 		<domaine name="prevision">
 			<service name="defaut" classe="GestionPrevisionService" methode="getPage" isPrivee="true"  xsl="xsl/previsions_liste.xsl" />

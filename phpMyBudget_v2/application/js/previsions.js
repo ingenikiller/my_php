@@ -292,12 +292,12 @@ function enregistreListeLignes(form){
 	var params = "";
 	var i = 1;
 	while($('#montant-'+i).length){
-		params+='&ligneId-'+i+'='+$('#montant-'+i).attr('ligneid')+'&montant-'+i+'='+$('#montant-'+i).attr('value');
+		params+='&ligneId-'+i+'='+$('#montant-'+i).attr('ligneid')+'&montant-'+i+'='+$('#montant-'+i).val();
 		i+=1;
 	}
 	params+='&nbligne='+(i-1)+"&render=json";
 	$.ajax({
-		url: "index.php?domaine=previsionsentete&service=update",
+		url: "index.php?domaine=previsionentete&service=update",
 		async: false,
 		dataType: 'json',
 		data: params
