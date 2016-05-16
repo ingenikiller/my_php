@@ -149,7 +149,7 @@
 								<xsl:value-of select="$LBL.LIBELLE"/>
 							</th>
 							<td style="width: 445px;">
-								<input type="text" size="50" id="libelle"  tabindex="30" value="{/root/data/Operation/libelle}"/>
+								<input type="text" size="40" id="libelle"  tabindex="30" value="{/root/data/Operation/libelle}"/>
 							</td>
 						</tr>
 						<tr>

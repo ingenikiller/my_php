@@ -108,7 +108,7 @@ function editerOperation(numeroCompte, operationId){
 		
 		$("div#boiteOperation").dialog({
 			resizable: false,
-			height:270,
+			height:300,
 			width:500,
 			modal: true
 		});
